@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+ul {
+  list-style: decimal-leading-zero;
+  font-size: x-large;
+}
+
+.inner-left {
+  margin: 0;
+}
+
+.inner-right {
+  margin-left: 3rem;
+}

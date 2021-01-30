@@ -1,71 +1,17 @@
-<div class="container spacex-container">
-  <h4>SpaceX Launch Programs</h4>
+<h1>RX JS Operators</h1>
+<div class="container">
   <div class="row">
-    <div class="col-md-2 spacex-filter">
-      <div class="filters">
-        <h5>Filters</h5>
-        <div class="launch-year-filter">
-          <label class="text-center list-head">Launch Year</label>
-          <ul class="ul-list-filter" id="ul-list-filter">
-            <li *ngFor="let year of years">
-              <button type="button" value="{{year}}" (click)="selectedFilters($event,{'launch_year':year})">{{ year
-                }}</button>
-            </li>
-          </ul>
-        </div>
-        <div class="success-launch-filter">
-          <label class="text-center list-head">Successful Launch</label>
-          <ul class="ul-list-filter" id="launch_success">
-            <li *ngFor="let stats of launchStatus">
-              <button type="button"
-                (click)="selectedFilters($event,{'launch_success':stats})">{{stats===true?'True':'False'}}</button>
-            </li>
-          </ul>
-        </div>
-        <div class=" success-landing-filter">
-          <label class="text-center list-head">Successful Landing</label>
-          <ul class="ul-list-filter" id="landing_success">
-            <li *ngFor="let stats of launchStatus">
-              <button type="button" value="{{stats}}"
-                (click)="selectedFilters($event,{'landing_success':stats})">{{stats===true?'True':'False'}}</button>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="md-col-3">
+      <ul>
+        <li *ngFor="let category of categories">
+          <a [routerLink]="category.path">{{category.title}}</a>
+        </li>
+      </ul>
     </div>
-    <div class="col-md-10">
-      <div class="">
-        <ul class="list-unstyled row">
-          <li *ngFor="let launch of filteredLaunchResult" class="col-md-3 spacex-list">
-            <div class="img-container">
-              <img alt="{{ launch.mission_name }}" src="../assets/MicrosoftTeams-image.png" class="img-responsive" />
-            </div>
-            <div class="mission-details">
-              <P><a class="" href="#">{{ launch.mission_name }} # {{ launch.flight_number }}</a></P>
-              <P>
-                <label class="font-weight-bold">Mission Ids:</label>
-                <span>
-                  <ul class="">
-                    <li *ngFor="let mId of [1]">{{ mId }}</li>
-                  </ul>
-                </span>
-              </P>
-              <P>
-                <label class="font-weight-bold">Launch Year: </label>
-                <span>{{ launch.launch_year }}</span>
-              </P>
-              <P>
-                <label class="font-weight-bold">Successful Launch:</label>
-                <span>{{ launch.launch_success }}</span>
-              </P>
-              <P>
-                <label class="font-weight-bold">Successful Landing:</label>
-                <span>{{ launch.launch_success }}</span>
-              </P>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <div class="md-col-9">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+
+<router-outlet name="error"></router-outlet>

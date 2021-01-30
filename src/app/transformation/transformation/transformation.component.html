@@ -1,0 +1,19 @@
+<h2>{{default}} operators</h2>
+<div class="container">
+    <div class="row">
+        <div class="md-col-3 inner-left">
+            <ul>
+                <li *ngFor="let operator of operators">
+                    <a [routerLink]="[
+                    {
+                        outlets:{transform:[operator]}
+                    }
+                    ]">{{operator}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="md-col-9 inner-right">
+            <router-outlet name="transform"></router-outlet>
+        </div>
+    </div>
+</div>
