@@ -1,1 +1,15 @@
-<p>range works!</p>
+<p>range works!
+
+1 If you have multiple pages pass your page start and page end value to range function.
+2 There is no such range function in Javascript.
+</p>
+
+<nav aria-label="Page navigation example" >
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item" *ngFor="let page of rangeData"><a class="page-link" href="#">{{page}}</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </nav>
+
+  
