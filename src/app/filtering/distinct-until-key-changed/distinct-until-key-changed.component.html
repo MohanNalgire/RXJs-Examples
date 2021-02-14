@@ -1,1 +1,24 @@
 <p>distinct-until-key-changed works!</p>
+
+
+
+<table class="table table-striped t">
+    <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>title</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of tasks" >
+            <td>{{data?.id}}</td>
+            <td>{{data?.title}}</td>
+            <td>{{data?.status}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<select >
+    <option *ngFor="let status of distinctStatuses" >{{status}}</option>
+</select>
